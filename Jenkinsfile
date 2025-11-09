@@ -9,10 +9,6 @@ pipeline {
                 // Project preparation (install dependencies if needed)
                 echo 'Preparing project...'
                 sh '''
-                if ! command -v composer > /dev/null; then
-                    curl -sS https://getcomposer.org/installer | php
-                    mv composer.phar /usr/local/bin/composer
-                fi
                 composer install --no-interaction --prefer-dist
             '''
             }
